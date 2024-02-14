@@ -17,14 +17,14 @@ app.get("/", function (req, res) {
   res.send("Hello World!");
 });
 
-app.get("/etudiants/rakoto", function (req, res) {
+app.get("/students/rakoto", function (req, res) {
   res.send({
     id: "00001",
     name: "Nom rakoto",
   });
 });
 
-app.get("/etudiants/:student", function (req, res) {
+app.get("/students/:student", function (req, res) {
   const studentName = req.params.student;
   res.send({
     id: "00001",
