@@ -1,36 +1,17 @@
-/* console.log("Mandeha")
-
-const a = 1;
-const b = 2;
-console.log(a+b) */
-
 const express = require("express");
+const studentsRouter = require("./src/students/students.route");
 // initial express app
 const app = express();
-
+// listnening port
 const port = 5000;
 
-/* app.get('/', (req, res) => {
-  res.send('Hello World!')
-}) */
+// sample hello word or other api endpoints
 app.get("/", function (req, res) {
   res.send("Hello World!");
 });
 
-app.get("/students/rakoto", function (req, res) {
-  res.send({
-    id: "00001",
-    name: "Nom rakoto",
-  });
-});
-
-app.get("/students/:student", function (req, res) {
-  const studentName = req.params.student;
-  res.send({
-    id: "00001",
-    name: "Nom de l'etudiant " + studentName,
-  });
-});
+// sample students api endpoints
+app.use("/students", studentsRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
