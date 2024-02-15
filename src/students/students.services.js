@@ -23,4 +23,29 @@ studentsServices.getAllStudents = async (filter) => {
   }];
 };
 
+/**
+ * Add a student item
+ */
+studentsServices.addStudent = async (studentData) => {
+  // TODO: Add student here
+  return {id: "NEW_STUDENT_ID_HERE", ...studentData};
+};
+
+/**
+ * Update student item
+ */
+studentsServices.updateStudent = async ({studentId, studentData}) => {
+  // TODO: Update student here
+  return {id: studentId, ...studentData};
+};
+
+/**
+ * Delete student item
+ */
+studentsServices.deleteStudent = async (studentId) => {
+  // TODO: Delete student here
+  return true;
+};
+
+
 module.exports = studentsServices;

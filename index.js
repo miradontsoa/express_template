@@ -3,7 +3,9 @@ const studentsRouter = require("./src/students/students.route");
 // initial express app
 const app = express();
 // listnening port
-const port = 5000;
+const port = 3000;
+
+app.use(express.json())
 
 // sample hello word or other api endpoints
 app.get("/", function (req, res) {

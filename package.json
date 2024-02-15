@@ -1,7 +1,7 @@
 {
-  "name": "hello_tco",
+  "name": "express_project",
   "version": "1.0.0",
-  "description": "Application exemple",
+  "description": "Application description",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
