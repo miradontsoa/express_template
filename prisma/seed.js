@@ -2,61 +2,31 @@ const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
-const userData = [
+const studentData = [
   {
-    name: 'Alice',
-    email: 'alice@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Join the Prisma Slack',
-          content: 'https://slack.prisma.io',
-          published: true,
-        },
-      ],
-    },
+    firstName: 'Alice',
+    lastName: 'Randria',
+    email: 'alice@email.com',
   },
   {
-    name: 'Nilu',
-    email: 'nilu@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Follow Prisma on Twitter',
-          content: 'https://www.twitter.com/prisma',
-          published: true,
-          viewCount: 42,
-        },
-      ],
-    },
+    firstName: 'Bob',
+    lastName: "Rakoto",
+    email: 'bob@email.com',
   },
   {
-    name: 'Mahmoud',
-    email: 'mahmoud@prisma.io',
-    posts: {
-      create: [
-        {
-          title: 'Ask a question about Prisma on GitHub',
-          content: 'https://www.github.com/prisma/prisma/discussions',
-          published: true,
-          viewCount: 128,
-        },
-        {
-          title: 'Prisma on YouTube',
-          content: 'https://pris.ly/youtube',
-        },
-      ],
-    },
+    firstName: 'Carl',
+    lastName: "Rabe",
+    email: 'carl@email.com',
   },
 ]
 
 async function main() {
   console.log(`Start seeding ...`)
-  for (const u of userData) {
-    const user = await prisma.user.create({
+  for (const u of studentData) {
+    const student = await prisma.student.create({
       data: u,
     })
-    console.log(`Created user with id: ${user.id}`)
+    console.log(`Created student with id: ${student.id}`)
   }
   console.log(`Seeding finished.`)
 }

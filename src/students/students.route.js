@@ -6,7 +6,7 @@ const studentsRouter = Router();
 /** Route to get all students */
 studentsRouter.get("/", async function (req, res) {
   res.send({
-    message: "Items list",
+    message: "Student list",
     page: 0,
     count: 0,
     result: await studentsServices.getAllStudents(),
@@ -23,7 +23,7 @@ studentsRouter.get("/:studentId", async function (req, res) {
   });
 });
 
-/** Route to get add student item */
+/** Route to add student item */
 studentsRouter.post("/", async function (req, res) {
   const studentData = {
     name: req.body.name
